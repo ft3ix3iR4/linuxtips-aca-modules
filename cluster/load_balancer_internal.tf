@@ -60,4 +60,7 @@ resource "aws_lb_listener" "internal" {
       status_code  = "200"
     }
   }
+
+  #aqui
+  depends_on = [aws_lb.internal]
 }
