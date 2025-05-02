@@ -31,3 +31,9 @@ variable "capacity_providers" {
     "FARGATE", "FARGATE_SPOT"
   ]
 }
+
+variable "acm_certs" {
+  description = "Lista de ARNs de certificados ACM que serão associados a recursos como load balancers no cluster ECS. Caso não sejam especificados, será usada a configuração padrão vazia."
+  type        = list(string)
+  default     = []
+}
