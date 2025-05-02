@@ -134,16 +134,3 @@ resource "aws_lb_target_group_attachment" "internal_lb_443" {
   port             = 443
 }
 
-resource "aws_lb_target_group_attachment" "internal_lb" {
-  target_group_arn = aws_lb_target_group.vpclink.arn
-  target_id        = aws_lb.internal.id
-  port             = 80
-}
-
-resource "aws_api_gateway_vpc_link" "main" {
-  name = var.project_name
-
-  target_arns = [
-    aws_lb.vpclink.arn
-  ]
-}
